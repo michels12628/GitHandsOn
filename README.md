@@ -8,10 +8,10 @@ A sample python file will be provided which has the program of developing the Ti
 Each individual students needs to perform the following operations:
 
 **1. Install and setup Git on thier local machines.**
-#done
+#done.
 
 **2. Setup a Github account.**
-#done
+#done.
 
 **3. Pull this repo on your local machine.**
 #done
