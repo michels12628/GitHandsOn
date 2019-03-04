@@ -5,7 +5,7 @@ import sys
 
 #define board 
 board=[i for i in range(0,9)]
-player, computer = '',''
+player, computer = ","
 # Corners, Center and Others, respectively
 moves=((1,7,3,9),(5,),(2,4,6,8))
 # Winner combinations
