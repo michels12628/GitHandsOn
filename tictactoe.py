@@ -1,4 +1,4 @@
-
+.
 # Simple TicTacToe game in Python - EAO
 import random
 import sys
