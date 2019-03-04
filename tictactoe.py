@@ -35,8 +35,6 @@ def can_move(brd, player, move):
     if move in tab and brd[move-1] == move-1:
         return True
     return False
-
-
 def can_win(brd, player, move):
     return win
 
