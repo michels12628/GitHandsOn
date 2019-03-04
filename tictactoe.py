@@ -24,7 +24,8 @@ def print_board():
         if i in ('X','O'): char=i;
         x+=1
         print(char,end=end)
-        
+  
+       
 def select_char():
     chars=('X','O')
     if random.randint(0,1) == 0:
