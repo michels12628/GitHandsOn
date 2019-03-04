@@ -37,7 +37,6 @@ def can_move(brd, player, move):
         return True
     return False
 
-
 def can_win(brd, player, move):
     return win
 
