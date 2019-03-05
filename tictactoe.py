@@ -57,6 +57,32 @@ def make_move(brd, player, move, undo=False):
         return (True, win)
     return (False, False)
 
+def can_win(brd, player, move):
+    places=[]
+    x=0
+    for i in brd:
+        if i == player: places.append(x);
+        x+=1
+    win=True
+    for tup in winners:
+        win=True
+        for ix in tup:
+            if brd[ix] != player:
+                win=False
+                break
+        if win == True:
+            break
+    return win
+
+def make_move(brd, player, move, undo=False):
+    if can_move(brd, player, move):
+        brd[move-1] = player
+        win=can_win(brd, player, move)
+        if undo:
+            brd[move-1] = move-1
+        return (True, win)
+    return (False, False)
+
 # AI goes here
 def computer_move():
     move=-1
@@ -82,6 +108,24 @@ def computer_move():
 
 def space_exist():
     return board.count('X') + board.count('O') != 9
+player, computer = select_char()
+print('Player is [%s] and computer is [%s]' % (player, computer))
+result='%%% Deuce ! %%%'
+while space_exist():
+    print_board()
+    print('# Make your move ! [1-9] : ', end='')
+    move = int(input())
+    moved, won = make_move(board, player, move)
+    if not moved:
+        print(' >> Invalid number ! Try again !')
+        continue
+    #
+    if won:
+        result='*** Congratulations ! You won ! ***'
+        break
+    elif computer_move()[1]:
+        result='=== You lose ! =='
+        break;
 
 player, computer = select_char()
 
