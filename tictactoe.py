@@ -84,7 +84,7 @@ def computer_move():
                 if move == -1 and can_move(board, computer, mv):
                     move=mv
                     break
-    return make_move(board, computer, move)
+    return make_move(board,  computer, move)
 
 def space_exist():
     return board.count('X') + board.count('O') != 9
