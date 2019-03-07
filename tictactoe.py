@@ -81,7 +81,7 @@ def computer_move():
     if move==-1:
         # Otherwise, try to take one of desired places.
         for tup in moves:
-            formv in tup:
+            for mv in tup:
             if move==-1 and can_move(board, computer, mv):
                 move=mv
                 break
@@ -96,6 +96,19 @@ print('Player is [%s] and computer is [%s]' % (player, computer))
 result='%%% Deuce ! %%%'
 
 while space_exist():
+    print_board()
+    print('# Make your move ! [1-9]:', end=")
+    move = int(input())
+    moved, won=make_move(board,player,move)
+    if not moved:
+        print('>> Invalid number! Try again!')
+        continue
+    #
+    if won:
+        result='*** Congratulations ! You won! ***'
+        break
+    elif computer_move()[1]:
+        result='===You lose!=='
         break;
 
 print_board()
